@@ -1,0 +1,18 @@
+```
+
+Секреты и пароли
+
+*.env
+config.py
+
+Python
+
+pycache/
+*.pyc
+.venv/
+venv/
+
+VS Code
+
+.vscode/
+```
