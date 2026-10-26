@@ -21,3 +21,15 @@
 2. Установите зависимости:
    ```bash
    pip install fastapi uvicorn psycopg2-binary pydantic
+```
+
+3. Создайте базу данных detective_db в PostgreSQL и выполните SQL-скрипт из init.sql.
+4. Создайте файл config.py в корне проекта и добавьте туда свой пароль от базы:
+   ```python
+   DB_PASSWORD = "ваш_пароль"
+   ```
+5. Запустите сервер:
+   ```bash
+   uvicorn main:app --reload
+   ```
+6. Откройте документацию Swagger: http://127.0.0.1:8000/docs
