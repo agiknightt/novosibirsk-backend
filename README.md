@@ -1,31 +1,23 @@
-# novosibirsk-backend
-First FastAPI project: connects to PostgreSQL and returns users/orders
-
-```markdown
 # Detective API (FastAPI + PostgreSQL)
 
-Мой первый backend-проект на Python. API для работы с базой данных интернет-магазина.
+Мой первый backend-проект на Python. API для работы с базой данных интернет-магазина. Реализована валидация данных и защита от SQL-инъекций.
 
 ## 🚀 Технологии
-- Python 3
-- FastAPI (веб-фреймворк)
-- PostgreSQL (база данных)
-- psycopg2 (драйвер для подключения к БД)
+- **Python 3**
+- **FastAPI** (веб-фреймворк)
+- **PostgreSQL** (реляционная база данных)
+- **psycopg2** (драйвер для подключения к БД)
+- **Pydantic** (валидация данных)
 
 ## 📡 Эндпоинты
-- `GET /users` — вернуть список всех пользователей из базы
-- `GET /users/{id}` — вернуть пользователя по ID
-- `GET /orders` — вернуть список заказов
+- `GET /users` — список всех пользователей
+- `GET /users/{id}` — пользователь по ID
+- `POST /users` — создание нового пользователя (валидация: возраст > 0)
+- `GET /orders` — список заказов
+- `POST /orders` — создание нового заказа (валидация: сумма > 0)
 
-## ⚙️ Как запустить
-1. Установите зависимости:
+## ⚙️ Как запустить локально
+1. Клонируйте репозиторий.
+2. Установите зависимости:
    ```bash
-   pip install fastapi uvicorn psycopg2-binary
-```
-
-2. Создайте базу данных detective_db в PostgreSQL и таблицы (SQL-скрипт в файле init.sql).
-3. Запустите сервер:
-   ```bash
-   uvicorn main:app --reload
-   ```
-4. Откройте в браузере: http://127.0.0.1:8000/docs
+   pip install fastapi uvicorn psycopg2-binary pydantic
